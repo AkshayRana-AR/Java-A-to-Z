@@ -1,0 +1,54 @@
+import java.util.*;
+
+public class BinarySearch{
+
+    public static void main(String[] args) {
+//input
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter Number of Elements in Arrays");
+        int n=sc.nextInt();
+        int arr[]=new int[n];
+        for(int i=0;i<arr.length;i++)
+        {
+            System.out.print("Element : "+ i+ " ");
+            arr[i]=sc.nextInt();
+        }
+        System.out.println("Enter Number to Search");
+        int key =sc.nextInt();
+
+        Arrays.sort(arr);
+        System.out.println(Arrays.toString(arr));
+        binary_search(arr,key);
+
+
+    }
+
+//logic simple iterative 
+    static void binary_search(int arr[], int x)               //Iterative Method
+    {
+        int l = 0, r = arr.length - 1;
+        boolean found=false;
+        while (l <= r) {
+            int m = (l + r) / 2;
+
+            if (arr[m] == x) {
+                System.out.println("Element found at index :"+" "+m);
+                found=true;
+                break;
+            }
+            else if (arr[m] < x)
+                l = m + 1;
+
+            else
+                r = m - 1;
+        }
+
+        // if we reach here, then element was
+        // not present
+        if(found==false)
+            System.out.println("Not found");
+    }
+}
+
+//Do this method as recursive gives space complexity of o(logn) while this gives o(1)
+//and both gives time complexity of (logn) 

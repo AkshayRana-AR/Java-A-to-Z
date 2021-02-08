@@ -1,0 +1,33 @@
+import java.util.*;
+class LinearSearch
+{                   //Linear Search----->Compare each element with key
+    public static void main(String args[])
+    {
+        int arr[]=new int[]{0,1,2,3,4,6,7,8,9,10};
+        System.out.println("Enter Number to search");
+        Scanner sc = new Scanner(System.in);
+        int key =sc.nextInt();
+        linear_search(arr,key);
+    }
+
+    static void linear_search(int arr[], int key)
+    {
+        boolean found=false;
+        for(int i=0;i<arr.length;i++)
+        {
+            if(arr[i]==key)
+            {
+                System.out.println("Number found at " +i+" index");
+                found=true;
+            }
+        }
+        if(found==false)
+        {
+            System.out.println("Number not Found");
+        }
+    }
+    
+}
+//The time complexity of the Linear Search algorithm is O(n).
+//Linear search is rarely used practically because other search algorithms such as the binary search algorithm
+// and hash tables allow significantly faster-searching comparison to Linear search

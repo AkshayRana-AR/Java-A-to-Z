@@ -1,0 +1,51 @@
+import java.util.*;
+
+public class JavaLastPractise{
+
+    public static void main(String[] args) {
+//input
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter Number of Elements in Arrays");
+        int n=sc.nextInt();
+        int arr[]=new int[n];
+        for(int i=0;i<arr.length;i++)
+        {
+            System.out.print("Element : "+ i);
+            arr[i]=sc.nextInt();
+            System.out.println();
+        }
+        System.out.println("Enter Number to Search");
+        int key =sc.nextInt();
+
+        Arrays.sort(arr);
+        System.out.println(Arrays.toString(arr));
+        binary_search(arr,0,arr.length-1,key);
+
+    }
+
+
+//logic
+    static void binary_search(int arr[],int l,int h, int key)               //Divide & Conquer Recursive Method
+    {
+        int mid=(l+h)/2;
+        //l+(h-l)/2 for overflow issue as they say
+        if(l<=h)                                                      //l<=h to avoid infinite loop if key is not present in array(whole array will be checked)
+        {
+            if (key == arr[mid])
+                System.out.println(mid);
+            else if (key < arr[mid] ) {
+                binary_search(arr, l, mid - 1, key);
+            }
+            else if (key > arr[mid]) {
+                binary_search(arr, mid + 1, h, key);
+            }
+        }
+        else
+        {												 
+            System.out.println("Number Not Found");
+        }
+    }
+}
+
+    //Binary Search: Time Complexity: o(logn)
+    //Space Complexity: o(logn) for above recursive method   o(1) in iterative method

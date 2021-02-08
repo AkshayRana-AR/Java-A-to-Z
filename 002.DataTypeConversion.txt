@@ -1,0 +1,39 @@
+class DataTypeConversion
+{
+    public static void main(String args[])
+    {
+          //Type Conversion : (i)Implicit     (ii)Explicit
+          //Byte(1) < char(2) < Short(2)  < Int(4) < Float(4) < Long(8) < Double(8) < Long Double(16 bytes)	//check size by Integer.MIN_VALUE  Double.MAX_VALUE etc.
+          //Implicit - Automatic Conversion (if we go from small datatype to large datatype no need to convert it eg: int to float direct assign it)
+          //Explicit - Need to convert (if we go from large to small we need to convert it) eg:
+          //float f=100.4;
+          //int i=f;  will show error
+
+//primitive data_type conversion
+        float f=100.8f; //f is needed to declare it float as by default java treats decimal point variables as double
+        int i=(int)f;
+
+        double d=100.5;		//double
+        int j=(int)d;
+
+        int k=65;           //char is small than int so...
+        char c=(char)k;     //65-A  97-a
+
+//string datatype conversion
+        //As String is not primitive data_type so we need methods to convert them
+        //String to Primitive parse method
+                String s1="123";
+                int i1 = Integer.parseInt(s1);			//int
+                float f1 = Float.parseFloat(s1);		//float
+                double d1 = Double.parseDouble(s1);		//double
+                char c1 = s1.charAt(0);				//char
+                System.out.println(i1+" "+f1+" "+d1+" "+c1);
+
+        //Primitive to String   toString method or use simple String s= ""+i1;
+                String s2=Integer.toString(i1);			//int
+                String s3=Float.toString(f1);			//float
+                String s4=Double.toString(d1);			//double
+                String s5=Character.toString(c1);		//char
+
+    }
+}

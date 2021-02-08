@@ -1,0 +1,27 @@
+class Strings
+{                    //String is a sequence of characters   as it is immutable(doesn't change) so Store in other string after applying operations
+    public static void main(String args[])
+    {
+        String s ="Akshay";
+        System.out.println(s.length());         //store in int
+        System.out.println(s.charAt(0)+" "+s.charAt(2));
+        System.out.println(s.substring(2,5));       //prints sha        //store in other string
+        System.out.println(s.toLowerCase()+ " " + s.toUpperCase());     //store in other string
+        System.out.println("Akshay".concat("Rana"));    //store in other string
+        System.out.println("Akshay".equals("Rana"));        //returns false  if equals all then true
+
+        String w1=" Learn And Grow";
+        System.out.println(w1.trim());  //trims white space from ends only      o/p:- "Learn And Grow"  //store in other string
+        System.out.println(s.isEmpty());    //true if empty else false
+
+        System.out.println(s.replace("ksh", "ksha"));   //returns Akshaay  //store in other string
+
+        System.out.println(s.indexOf("a"));     //returns 4   if want specific then s.indexOf("a", 3) it will start search from specified index
+
+        String s1="Mahabharat,Godzilla,WaterHorse";
+        String arrofpieces[]=s1.split(",");
+        for(String temp:arrofpieces)
+            System.out.println(temp);
+
+    }
+}

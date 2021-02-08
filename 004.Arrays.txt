@@ -1,0 +1,80 @@
+import java.util.*;
+
+class Arrays
+{                    //Array Size Must Be Specified by int value  //arr.length for length returns int
+
+    public static void main(String args[]) {
+
+//All data_types Array Initialization
+
+        int arri[]=new int[10];                 //or int arri[]=new int[]{1,2,3}
+        System.out.println(Arrays.toString(arri));
+
+        float arrf[]=new float[10];
+        System.out.println(Arrays.toString(arrf));
+
+        double arrd[]=new double[10];
+        System.out.println(Arrays.toString(arrd));
+
+        char arrc[]=new char[10];
+        System.out.println(Arrays.toString(arrc));
+
+        String arrs[]=new String[10];
+        System.out.println(Arrays.toString(arrs));
+
+//Array Input and Output
+
+        //Taking Array Input
+        System.out.println("Insert Integer Numbers to Store in Array");
+        Scanner sc=new Scanner(System.in);
+        for(int i=0;i< arri.length;i++)
+        {
+                arri[i]=sc.nextInt();
+        }
+        sc.nextLine();
+        System.out.println("Insert String Text to Store in Array");
+        for(int i=0;i< arrs.length;i++)
+        {
+            arrs[i]=sc.nextLine();
+        }
+
+
+        //Printing Array Output
+        for(int i=0;i<arri.length;i++)
+        {
+            System.out.print(arri[i] + " ");
+        }
+        System.out.println();
+        for(int i=0;i< arrs.length;i++)
+        {
+            System.out.print(arrs[i] + " ");
+        }
+
+
+//MultiDimensional Array also called Jagged Array
+
+        System.out.println("\nInsert Integer Numbers to Store in Multidimensional Array 3 rows 2 columns");
+        int arrint[][]=new int[3][2];
+        //Taking input
+        for(int i = 0;i<arrint.length;i++)
+            for(int j = 0;j<arrint[1].length;j++)           //as different length
+                arrint[i][j]=sc.nextInt();
+
+        //Printing Output
+        for(int i = 0;i<arrint.length;i++)
+        {
+            for(int j = 0;j<arrint[1].length;j++)           //as different length
+                {System.out.println(arrint[i][j] + " ");}
+            System.out.println();
+        }
+
+        for (int i = 0; i < arrint.length; i++)
+            System.out.println(Arrays.toString(arrint[i]));
+
+//Array Methods
+	//1.Arrays.sort(arr1);                                         sorts the array
+	//2.Arrays.binarySearch(arr_name, search_key_value);           returns index if value is present else -1 is returned
+	//3.Arrays.equals(arr1, arr2)                                  returns true if equal else false;
+
+    }
+}

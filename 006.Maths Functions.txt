@@ -1,0 +1,13 @@
+import java.lang.Math;
+
+class JavaLastPractise
+{                    
+    public static void main(String args[])
+    {
+        System.out.println(Math.pow(2,3));    //returns double
+        System.out.println(Math.sqrt(16));      //returns double    //cbrt for cube root
+        System.out.println(Math.round(2.333333333));    //returns int
+        System.out.println(Math.abs(-1));    //returns same type int->int double->double   absolute value negative to positive
+        System.out.println(Math.log(2));    //returns double    //log10() for log base 10
+    }
+}

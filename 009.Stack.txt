@@ -1,0 +1,86 @@
+public class stackUse {
+
+    public  static void main(String args[])
+    {
+        Stack s=new Stack();
+        s.push(1);
+        s.push(2);
+        s.push(3);
+        s.push(4);
+        s.push(5);
+        s.push(6);
+        s.SeeStack();
+        s.pop();
+        s.SeeStack();
+        s.pop();
+        s.SeeStack();
+        s.push(6);
+        s.SeeStack();
+        s.pop();s.pop();s.pop();s.pop();
+        s.SeeStack();
+        s.pop();
+    }
+}
+
+class Stack
+{
+    static final int MAX=5;
+    int arr[]=new int[MAX];
+    int top=-1;
+    Stack()
+    {
+        System.out.print("Hello Stack is Initializing...");
+
+    }
+    void push(int x)
+    {
+        if(isFull())
+        {
+           System.out.println("\n-------Stack Overflowed--------\n");
+        }
+        else
+        {
+            top=top+1;
+            arr[top]=x;
+            System.out.println("Inserted is : "+arr[top]);
+        }
+    }
+    void pop()
+    {
+
+        if(isEmpty())
+        {
+            System.out.println("\n-------Stack Underflow-------\n");
+        }
+        else
+        {
+            System.out.println("Popped is :"+arr[top]);
+            top=top-1;
+
+        }
+    }
+
+    boolean isFull()
+    {
+        if(top == MAX - 1)
+          return true;
+        else
+            return false;
+    }
+
+    boolean isEmpty()
+    {
+        if(top==-1)
+        return true;
+        else
+        return false;
+    }
+
+    void SeeStack()
+    {
+        System.out.println("Stack Elements: ");
+        for (int i=0;i<=top;i++)
+        System.out.print(" "+arr[i]+",");
+    }
+
+}

@@ -1,0 +1,38 @@
+import java.util.*;
+public class InputOutputInJava{			//We can take input i 3 ways: (i) Scanner Class  (ii) BufferedReader Class  (iii) Console Class
+    public static void main(String args[])
+    {
+//Input
+        Scanner sc1=new Scanner(System.in);
+	System.out.println("Enter Integer, Float, Double, Char, String, SingleString");
+
+        int int1 = sc1.nextInt();		//input integer
+        
+        float float1 = sc1.nextFloat();		//input float
+        
+        double double1 = sc1.nextDouble();	//input double
+        
+        char char1 = sc1.next().charAt(0);	//input char
+        
+        sc1.nextLine();				//because We need to skip \n as input. Its because we have used nextLine() after nextInt(),nextFloat()... 	
+        String string1 = sc1.nextLine();	//input string
+	
+	String string2=sc1.next(); 		 //Returns only single string "Akshay is the Best" returns "Akshay"
+
+
+//Output
+        System.out.println("Simple Direct Output1");
+        System.out.print(int1+"\n");
+        System.out.println(float1);
+        System.out.println(double1);
+        System.out.println(char1);
+        System.out.println("String is :"+string1);
+        System.out.println("Single String is :"+string2);
+
+//Formatted Output using printf of "java" same as "c"
+        System.out.printf("\nAs per Specified Format\n");
+        System.out.printf("Akshay %03d \n",int1);  	 //000 will automatically added if number is less than 3digit number  93->093
+        System.out.printf("%10.6f \n",float1);  	 //10totalspace.6digitsafterdecimal_point  _ _ _ . _ _ _ _ _ _   1->  __1.000000
+        System.out.printf("%2.10f \n",double1);
+    }
+}
